@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 public class Login {
 
-    // Public member variables to store user details
     public String firstName;
     public String lastName;
     public String username;
     public String password;
     public String cellPhoneNumber;
 
-    // Constructor to set up user details when creating a Login object
+     
     public Login(String firstName, String lastName, String username,
                  String password, String cellPhoneNumber) {
         this.firstName = firstName;
@@ -101,7 +100,7 @@ public class Login {
         }
     }
 
-    // Getter methods to access fields
+    // Methods
     public String getFirstName() {
         return firstName;
     }
@@ -124,27 +123,28 @@ public class Login {
 
     // Interactive interface using Scanner
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter First Name: ");
-            String firstName = scanner.nextLine();
-            
-            System.out.print("Enter Last Name: ");
-            String lastName = scanner.nextLine();
-            
-            System.out.print("Enter Username: ");
-            String username = scanner.nextLine();
-            
-            System.out.print("Enter Password: ");
-            String password = scanner.nextLine();
-            
-            System.out.print("Enter Cell Phone Number: ");
-            String cellPhoneNumber = scanner.nextLine();
-            
-            Login user = new Login(firstName, lastName, username, password, cellPhoneNumber);
-            
-            String result = user.registerUser();
-            System.out.println("\n" + result);
-        }
-    }
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter First Name: ");
+        String firstName = scanner.nextLine();
+
+        System.out.print("Enter Last Name: ");
+        String lastName = scanner.nextLine();
+
+        System.out.print("Enter Username: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Enter Password: ");
+        String password = scanner.nextLine();
+
+        System.out.print("Enter Cell Phone Number: ");
+        String cellPhoneNumber = scanner.nextLine();
+
+        Login user = new Login(firstName, lastName, username, password, cellPhoneNumber);
+
+        String result = user.registerUser();
+        System.out.println("\n" + result);
+
+        scanner.close();
+    }
 }
